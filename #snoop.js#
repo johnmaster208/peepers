@@ -1,0 +1,38 @@
+#!/usr/bin/env node
+var command = require('commander');
+var chalk = require('chalk');
+var request = require('request');
+var cheerio = require('cheerio');
+var emoji = require('node-emoji');
+
+command.version('1.0.0');
+command.usage('<keywords>');
+command.parse(process.argv);
+
+if(command.args.length < 1) {
+    command.help();
+} else {
+    var keywords = command.args;
+    executeQuery(keywords);
+    // console.log('You entered: ' + keywords);
+}
+
+
+function executeQuery(keywords) {
+    const data = '';
+    let cffIcon = emoji.get("coffee");
+    console.log('Working '+cffIcon+'...');
+    request(`https://google.com/search?q=${keywords}`,function(err, resp, html){
+        if(!err && resp.statusCode == 200) {
+         let $ = cheerio.load(html);
+         let links = $('body').find('span.comhead');
+         $(links).each(function(value){
+	    var e = $(value).html();
+            console.log(e);
+         });
+         return console.log(links);
+        } else {
+         return console.log("Something happened on the network side we couldn't make a request properly. Are you connected to the internet?")
+        }
+    });
+}
