@@ -6,11 +6,10 @@ var Snoop = require('./lib/snoopers');
 command.version('1.0.0');
 command.usage('<keywords>');
 command.parse(process.argv);
-
 if(command.args.length < 1) {
     command.help();
 } else {
     var keywords = command.args;
-    Snoop.executeKeywordQuery(keywords);
+    Snoop.executeQuery(keywords);
 }
 
