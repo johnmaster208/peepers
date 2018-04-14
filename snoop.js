@@ -10,6 +10,5 @@ if(command.args.length < 1) {
     command.help();
 } else {
     var keywords = command.args;
-    Snoop.executeQuery(keywords);
+    Snoop.executeQuery(keywords)
 }
-
