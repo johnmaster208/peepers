@@ -1,26 +1,25 @@
 {
-    "name": "snoop",
+    "name": "peepers",
     "version": "1.0.0",
-    "description": "Node CLI for harvesting social profile artifacts",
+    "description": "intelligent command line web scraper",
     "main": "index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "snoop": "node ./snoop.js",
-        "debug": "node debug ./snoop.js"
+        "snoop": "node ./peep.js",
     },
     "bin": {
-        "snoop": "./snoop.js"
+        "peep": "./peep.js"
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/johnmaster208/snoop.git"
+        "url": "git+https://github.com/johnmaster208/peepers.git"
     },
     "author": "",
     "license": "ISC",
     "bugs": {
-        "url": "https://github.com/johnmaster208/snoop/issues"
+        "url": "https://github.com/johnmaster208/peepers/issues"
     },
-    "homepage": "https://github.com/johnmaster208/snoop#readme",
+    "homepage": "https://github.com/johnmaster208/peepers#readme",
     "dependencies": {
         "chalk": "^2.3.0",
         "cheerio": "^1.0.0-rc.2",

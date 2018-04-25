@@ -1,2 +1,2 @@
-# snoop
-Node CLI for harvesting social profile artifacts
+# peepers
+intelligent command line web scraper

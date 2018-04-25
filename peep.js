@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 var command = require('commander');
 var chalk = require('chalk');
-var Snoop = require('./lib/snoopers');
+var Peep = require('./lib/peepers');
 
 command.version('1.0.0');
 command.usage('<keywords>');
@@ -10,5 +10,5 @@ if(command.args.length < 1) {
     command.help();
 } else {
     var keywords = command.args;
-    Snoop.executeQuery(keywords)
+    Peep.executeQuery(keywords)
 }
