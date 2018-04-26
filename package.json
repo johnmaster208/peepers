@@ -4,8 +4,7 @@
     "description": "intelligent command line web scraper",
     "main": "index.js",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
-        "snoop": "node ./peep.js"
+        "test": "mocha --recursive"
     },
     "bin": {
         "peep": "./peep.js"
@@ -27,5 +26,9 @@
         "node-emoji": "^1.8.1",
         "ora": "^2.0.0",
         "request": "^2.83.0"
+    },
+    "devDependencies": {
+        "expect": "^22.4.3",
+        "mocha": "^5.1.1"
     }
 }
