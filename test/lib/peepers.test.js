@@ -1,23 +1,24 @@
 var expect = require('expect');
 var peepers = require('../../lib/peepers');
+var sinon = require('sinon');
 
 describe('Peepers', function() {
 
-  describe('Peepers initialization:', function() {
+  describe('Gets initialized which...', function() {
     it('Expects Peepers JS import to be a typeof object.', function() {
       expect(typeof peepers).toBe('object');
     })
     it('Expects that constructor contains a results property.', function() {
       expect(peepers.hasOwnProperty('results')).toBe(true);
     });
+    it('Expects results to be an array', function() {
+      expect(Object.prototype.toString.call(peepers.results)).toBe('[object Array]');
+    });
     it('Expects the results property has been uninitalized (set to 0).', function() {
       expect(peepers.results.length).toBe(0);
     });
     it('Expects that constructor contains a threshold property.', function() {
       expect(peepers.hasOwnProperty('threshold')).toBe(true);
-    });
-    it('Expects results to be an array', function() {
-      expect(Object.prototype.toString.call(peepers.results)).toBe('[object Array]');
     });
     it('Expects that the threshold property has been set to the default value.', function() {
       expect(peepers.threshold).toBe(100);
