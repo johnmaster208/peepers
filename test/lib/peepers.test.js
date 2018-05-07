@@ -37,7 +37,10 @@ describe('Peepers', function() {
     });
     it('Expects that constructor contains a workingAnim property', function() {
       expect(peepers.hasOwnProperty('workingAnim')).toBe(true);
-    })
+    });
+    it('Expects that constructor contains an executeQuery property.', function() {
+      expect(peepers.hasOwnProperty('executeQuery')).toBe(true);
+    });
   });
 
 });
