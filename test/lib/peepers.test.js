@@ -41,6 +41,9 @@ describe('Peepers', function() {
     it('Expects that constructor contains an executeQuery property.', function() {
       expect(peepers.hasOwnProperty('executeQuery')).toBe(true);
     });
+    it('Expects executeQuery to be a typeof function.', function() {
+      expect(typeof peepers.executeQuery).toBe('function');
+    });
   });
 
 });
