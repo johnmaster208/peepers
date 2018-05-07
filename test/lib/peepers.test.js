@@ -35,6 +35,9 @@ describe('Peepers', function() {
     it('Expects generateRandomTimeout to be a typeof function.', function() {
       expect(typeof peepers.generateRandomTimeout).toBe('function');
     });
+    it('Expects that constructor contains a workingAnim property', function() {
+      expect(peepers.hasOwnProperty('workingAnim')).toBe(true);
+    })
   });
 
 });
