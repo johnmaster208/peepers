@@ -1,6 +1,8 @@
 var peepers = require('../../lib/peepers');
 var expect = require('chai').expect;
 var sinon = require('sinon');
+var request = require('request');
+var nock = require('nock');
 
 describe('Peepers', function() {
 
@@ -49,6 +51,23 @@ describe('Peepers', function() {
     });
     it('Expects printResults to be a typeof function.', function() {
       expect(peepers.printResults).to.be.an('function');
+    });
+  });
+
+  describe('Calls function executeQuery()...', function() {
+    var executeQueryStub = sinon.stub(peepers, 'executeQuery');
+    var mockKeywords = 'Foo';
+    it('Expects the function to get invoked with keywords args...', function() {
+      executeQueryStub(mockKeywords, null);
+      expect(executeQueryStub.callCount).to.equal(1);
+    });
+    it('Expects to make a HTTP request and receive back an HTML document...', function(done) {
+      executeQueryStub(mockKeywords, null);
+      var testOutput = { output: 'Foo' };
+      request(`https://google.com/search?q=${mockKeywords}`, function(err, resp, html){
+        expect(html).to.not.be.undefined;
+        done();
+      });
     });
   });
 
