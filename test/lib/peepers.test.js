@@ -48,7 +48,7 @@ describe('Peepers', function() {
       expect(peepers).to.have.property('printResults');
     });
     it('Expects printResults to be a typeof function.', function() {
-      expect(peepers.printResults).to.be.an('array');
+      expect(peepers.printResults).to.be.an('function');
     });
   });
 
