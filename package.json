@@ -4,7 +4,8 @@
     "description": "intelligent command line web scraper",
     "main": "index.js",
     "scripts": {
-        "test": "mocha --recursive"
+        "test": "mocha --recursive",
+        "watch": "mocha --watch ./test ./"
     },
     "bin": {
         "peep": "./peep.js"
@@ -29,7 +30,7 @@
         "request": "^2.83.0"
     },
     "devDependencies": {
-        "expect": "^22.4.3",
+        "chai": "^4.1.2",
         "mocha": "^5.1.1",
         "sinon": "^5.0.2"
     }
