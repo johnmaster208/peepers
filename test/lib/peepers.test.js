@@ -17,7 +17,7 @@ describe('Peepers', function() {
       expect(peepers.results).to.be.an('array');
     });
     it('Expects the results property has been uninitalized (set to 0).', function() {
-      expect(peepers.results.length).to.equal(0);
+      expect(peepers.results.length).to.equal(0); 
     });
     it('Expects that constructor contains a threshold property.', function() {
       expect(peepers).to.have.property('threshold');
