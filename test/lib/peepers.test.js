@@ -1,11 +1,11 @@
-var peepers = require('../../lib/peepers');
-var expect = require('chai').expect;
+import { expect } from 'chai'
+import Peepers from '../../lib/peepers';
 
 describe('Peepers', function() {
-
   describe('Gets initialized which...', function() {
-    it('Expects Peepers JS import to be a typeof object.', function() {
-      expect(peepers).to.be.an('object');
+    const peepers = new Peepers()
+    it('Expects Peepers JS import to be a typeof object.', () => {
+      expect(peepers).to.be.an.instanceof(Peepers);
     })
     it('Expects that constructor contains a results property.', function() {
       expect(peepers).to.have.property('results');
@@ -34,9 +34,10 @@ describe('Peepers', function() {
     it('Expects generateRandomTimeout to be a typeof function.', function() {
       expect(peepers.generateRandomTimeout).to.be.a('function');
     });
-    it('Expects that constructor contains a workingAnim property', function() {
-      expect(peepers).to.have.property('workingAnim');
+    it('Expects that constructor contains a spinner property', function() {
+      expect(peepers).to.have.property('spinner');
     });
+    // MORE HERE
     it('Expects that constructor contains an executeQuery property.', function() {
       expect(peepers).to.have.property('executeQuery');
     });

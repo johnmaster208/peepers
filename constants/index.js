@@ -4,6 +4,7 @@ export const STATUS = keyMirror({
     PENDING: null,
     COMPLETED: null,
     PAGINATING: null,
+    COMPILING: null,
     SUCCESS: null,
     FAILURE: null,
     UNKNOWN: null,
