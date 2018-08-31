@@ -4,8 +4,8 @@
     "description": "intelligent command line web scraper",
     "main": "index.js",
     "scripts": {
-        "test": "mocha --recursive --compilers js:babel-core/register",
-        "test:watch": "mocha --watch --compilers js:babel-core/register ./test ./",
+        "test": "BABEL_DISABLE_CACHE=1 && mocha --recursive --compilers js:babel-core/register",
+        "test:watch": "BABEL_DISABLE_CACHE=1 && mocha --watch --compilers js:babel-core/register ./test ./",
         "build": "rm -rf ./dist && babel ./ --out-dir dist/ --ignore ./node_modules,./.babelrc,./package.json,./npm-debug.log, --copy-files",
         "start": "yarn run build && node dist/peep.js"
     },
